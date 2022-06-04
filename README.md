@@ -1,27 +1,31 @@
+# List of Useful Docker commands 
 ## Create Docker Images
+### Create docker Image from dockerhub
+`sudo docker pull <DockerfileName>`
 ### Create docker Image from Docker file
 `sudo docker build <Dockerfile Location> -t <ImageName>`
 
 ## Docker Start up
+### Docker Start up without TTY (Background)
+`sudo docker run -d <ImageName>`
 ### Basic start up with TTY attached
 `sudo docker run --name <InstanceName> -it <EntryPointCMD>`
 ### Docker Start up with specific TTY (e.g. stdin/stdout/stderr) attached
 `sudo docker run -a stdin -a stdout -i -t <ImageName> <CMD>`
-### Docker Start up without TTY
-`sudo docker run -d -p 80:80 my_image service <ImageName>`
 ### Docker Exec a command
 `sudo docker exec <InstanceName/ID> -it <CMD>`
 ### Start up with a name
-`sudo docker run -it --name <InstanceName> <ImageName> <EntryPointCMD>`
-
-### Start with common pid space
-`sudo docker run -it --pid=host <ImageName> <EntryPointCMD>`
+`sudo docker run -it --name <InstanceName/ID> <ImageName> <EntryPointCMD>`
+### Start with common PID namespace
+`sudo docker run -it --name <InstanceName/ID> --pid=host <ImageName> <EntryPointCMD>`
 ### Start with common IPC
-`sudo docker run -it --ipc=host <ImageName> <EntryPointCMD>`
+`sudo docker run -it --name <InstanceName/ID> --ipc=host <ImageName> <EntryPointCMD>`
 
 ## Docker monitoring
 ### list of all Instances
 `sudo docker ps -a`
+### List of process(es) running inside container
+`sudo docker top <InstanceName/ID>`
 
 ## Docker termination
 ### Terminate and remove an Instance
