@@ -1,0 +1,3 @@
+[submodule "ebpf-docker-for-mac"]
+	path = ebpf-docker-for-mac
+	url = https://github.com/subhrendu1987/ebpf-docker-for-mac
