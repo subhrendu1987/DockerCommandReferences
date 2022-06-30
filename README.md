@@ -21,11 +21,28 @@
 ### Start with common IPC
 `sudo docker run -it --name <InstanceName/ID> --ipc=host <ImageName> <EntryPointCMD>`
 
+## Docker Export
+###
+`sudo docker export`
+
+
 ## Docker monitoring
 ### list of all Instances
 `sudo docker ps -a`
 ### List of process(es) running inside container
 `sudo docker top <InstanceName/ID>`
+
+## Docker with X11
+### Without python support
+* In Host `xauth list| awk 'NR==1'` to get the COOKIE
+* In container 
+	- `touch /root/.Xauthority`
+	- `xauth add <COOKIE>`
+	- `xauth list`
+
+### Alternate
+`sudo python3 -m pip install dockerx --user`
+`sudo python3 -m dockerx.run --image <ImageName> --command 'sleep infinity'`
 
 ## Docker termination
 ### Kill "Exited" Instances
