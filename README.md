@@ -51,3 +51,15 @@
 `sudo docker kill <InstanceName/ID>; sudo docker rm <InstanceName/ID>`
 ### Terminate and remove all Instances
 `sudo docker kill $(sudo docker ps -q); sudo docker rm $(sudo docker ps -a -q)`
+
+
+# List of Useful Docker-compose commands 
+## Pull
+`sudo docker-compose -f docker-compose.yaml pull`
+## Build
+`sudo docker-compose -f docker-compose.yaml up -d`
+## Kill
+`sudo docker-compose -f docker-compose.yaml kill`
+## Exec particular service
+`docker-compose exec sctp-client bash`
+`docker-compose exec sctp-server bash`
