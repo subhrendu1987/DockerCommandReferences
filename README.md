@@ -52,7 +52,10 @@
 ### Terminate and remove all Instances
 `sudo docker kill $(sudo docker ps -q); sudo docker rm $(sudo docker ps -a -q)`
 ## Docker complete uninstallation
-`dpkg -l | grep -i docker | awk '{system(" sudo apt purge -y "$2)}'`
+```dpkg -l | grep -i docker | awk '{system(" sudo apt purge -y "$2)}';
+sudo apt-get remove docker docker-engine docker.io containerd runc;
+sudo apt autoremove
+```
 
 # List of Useful Docker-compose commands 
 ## Pull
