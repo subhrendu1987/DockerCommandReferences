@@ -51,7 +51,8 @@
 `sudo docker kill <InstanceName/ID>; sudo docker rm <InstanceName/ID>`
 ### Terminate and remove all Instances
 `sudo docker kill $(sudo docker ps -q); sudo docker rm $(sudo docker ps -a -q)`
-
+## Docker complete uninstallation
+`dpkg -l | grep -i docker | awk '{system(" sudo apt purge -y "$2)}'`
 
 # List of Useful Docker-compose commands 
 ## Pull
