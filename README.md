@@ -21,6 +21,7 @@
 ### Start with common IPC
 `sudo docker run -it --name <InstanceName/ID> --ipc=host <ImageName> <EntryPointCMD>`
 ### Save exited container with changes
+Exit from the current docker and check `sudo docker ps --filter "name=<container name>"`
 `sudo docker commit <containerID> <ImageName>`
 ## Docker Export
 ###
