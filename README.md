@@ -20,7 +20,8 @@
 `sudo docker run -it --name <InstanceName/ID> --pid=host <ImageName> <EntryPointCMD>`
 ### Start with common IPC
 `sudo docker run -it --name <InstanceName/ID> --ipc=host <ImageName> <EntryPointCMD>`
-
+### Save exited container with changes
+`sudo docker commit <containerID> <ImageName>`
 ## Docker Export
 ###
 `sudo docker export`
