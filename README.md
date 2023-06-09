@@ -1,6 +1,6 @@
 # List of Useful Docker commands 
 ## Installation and service
-### Daemon service
+### Daemon start
 `sudo systemctl start docker`
 ## Create Docker Images
 ### Create docker Image from dockerhub
